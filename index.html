@@ -3,95 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Open Me ❤️</title>
+<title>For Trevion ❤️</title>
 
 <style>
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffe6ea;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container {
-    position: relative;
-    width: 320px;
-    height: 300px;
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffd6de;
+    font-family:Arial, sans-serif;
+    overflow:hidden;
 }
 
-.envelope {
-    position: absolute;
-    bottom: 0;
-    width: 320px;
-    height: 180px;
-    background: #d9d9d9;
-    border-radius: 0 0 10px 10px;
-    cursor: pointer;
+.container{
+    position:relative;
+    width:350px;
+    height:400px;
 }
 
-.flap {
-    position: absolute;
-    top: -90px;
-    width: 0;
-    height: 0;
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-    border-bottom: 90px solid #c4c4c4;
-    transform-origin: top;
-    transition: transform 1s ease;
+.envelope{
+    position:absolute;
+    bottom:0;
+    width:350px;
+    height:220px;
+    background:#d8d8d8;
+    border-radius:0 0 12px 12px;
+    cursor:pointer;
 }
 
-.card {
-    position: absolute;
-    left: 20px;
-    top: 40px;
-    width: 280px;
-    height: 160px;
-    background: red;
-    color: black;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 20px;
-    box-sizing: border-box;
-    transform: translateY(100px);
-    transition: all 1s ease;
-    transform-style: preserve-3d;
-    cursor: pointer;
+.flap{
+    position:absolute;
+    top:-110px;
+    width:0;
+    height:0;
+    border-left:175px solid transparent;
+    border-right:175px solid transparent;
+    border-bottom:110px solid #c5c5c5;
+    transform-origin:top;
+    transition:1s;
 }
 
-.card.open {
-    transform: translateY(-120px);
+.card{
+    position:absolute;
+    left:15px;
+    top:90px;
+    width:320px;
+    height:200px;
+    background:red;
+    border-radius:15px;
+    cursor:pointer;
+    transform-style:preserve-3d;
+    transition:1s;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
-.card.flip {
-    transform: translateY(-120px) rotateY(180deg);
+.card.open{
+    transform:translateY(-170px);
+}
+
+.card.flip{
+    transform:translateY(-170px) rotateY(180deg);
 }
 
 .front,
-.back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    border-radius:15px;
 }
 
-.back {
-    transform: rotateY(180deg);
+.front{
+    color:gold;
+    font-size:30px;
+    font-weight:bold;
+    text-shadow:2px 2px 3px black;
+}
+
+.back{
+    transform:rotateY(180deg);
+    color:black;
+    font-size:28px;
+    font-weight:bold;
+    line-height:1.4;
 }
 </style>
 </head>
@@ -101,14 +108,16 @@ body {
 <div class="container">
 
     <div class="card" id="card">
+
         <div class="front">
-            U STINK 💩
+            To Trevion Newsome ❤️
         </div>
 
         <div class="back">
-            I'M KIDDING ❤️<br><br>
-            I LOVE YOU FOREVER 😘
+            I Love You Forever ❤️<br>
+            - Maria 😘
         </div>
+
     </div>
 
     <div class="envelope" id="envelope">
@@ -118,23 +127,23 @@ body {
 </div>
 
 <script>
-const envelope = document.getElementById('envelope');
-const flap = document.getElementById('flap');
-const card = document.getElementById('card');
+const envelope = document.getElementById("envelope");
+const flap = document.getElementById("flap");
+const card = document.getElementById("card");
 
 let opened = false;
 
-envelope.addEventListener('click', () => {
-    if (!opened) {
-        flap.style.transform = 'rotateX(180deg)';
-        card.classList.add('open');
+envelope.addEventListener("click", () => {
+    if(!opened){
+        flap.style.transform = "rotateX(180deg)";
+        card.classList.add("open");
         opened = true;
     }
 });
 
-card.addEventListener('click', () => {
-    if (opened) {
-        card.classList.toggle('flip');
+card.addEventListener("click", () => {
+    if(opened){
+        card.classList.toggle("flip");
     }
 });
 </script>
