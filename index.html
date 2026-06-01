@@ -3,152 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>💙 To Trevion 💙</title>
+<title>❤️</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffdde6;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffd6de;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+.container{
+    text-align:center;
 }
 
-.container {
-    position: relative;
-    width: 350px;
-    height: 450px;
+.heart{
+    font-size:180px;
+    display:inline-block;
+    animation:spin 4s ease-out forwards;
 }
 
-/* Envelope */
-.envelope {
-    position: absolute;
-    bottom: 0;
-    width: 350px;
-    height: 220px;
-    background: #89CFF0;
-    border-radius: 0 0 12px 12px;
-    cursor: pointer;
+@keyframes spin{
+    0%{
+        transform:rotate(0deg);
+    }
+    80%{
+        transform:rotate(1800deg);
+    }
+    100%{
+        transform:rotate(1980deg);
+    }
 }
 
-.flap {
-    position: absolute;
-    top: -110px;
-    width: 0;
-    height: 0;
-    border-left: 175px solid transparent;
-    border-right: 175px solid transparent;
-    border-bottom: 110px solid #6bb7e8;
-    transform-origin: top;
-    transition: transform 1s ease;
+.message{
+    opacity:0;
+    margin-top:20px;
+    font-size:28px;
+    font-weight:bold;
+    color:#000;
+    max-width:700px;
+    padding:20px;
+    animation:showMessage 2s forwards;
+    animation-delay:4s;
 }
 
-/* Card */
-.card {
-    position: absolute;
-    left: 15px;
-    top: 50px;
-    width: 320px;
-    height: 220px;
-    background: red;
-    border-radius: 15px;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transition: transform 1s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,.25);
-}
-
-.card.open {
-    transform: translateY(-230px);
-}
-
-.card.flip {
-    transform: translateY(-230px) rotateY(180deg);
-}
-
-.front,
-.back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.front {
-    color: gold;
-    font-size: 30px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px black;
-}
-
-.back {
-    transform: rotateY(180deg);
-    color: black;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 1.5;
+@keyframes showMessage{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
+    <div class="heart">❤️</div>
 
-    <div class="card" id="card">
-        <div class="front">
-            💙<br>
-            To Trevion Newsome
-            <br>💙
-        </div>
+    <div class="message">
+        I missed you ong.<br><br>
 
-        <div class="back">
-            I Love You Forever 💙<br><br>
-            - Maria 😘
-        </div>
+        Play and leave again,<br>
+        you gone be gone for good. ❤️<br><br>
+
+        I LOVE YOU ❤️
     </div>
-
-    <div class="envelope" id="envelope">
-        <div class="flap" id="flap"></div>
-    </div>
-
 </div>
-
-<script>
-const envelope = document.getElementById("envelope");
-const flap = document.getElementById("flap");
-const card = document.getElementById("card");
-
-let opened = false;
-
-envelope.addEventListener("click", function() {
-    if (!opened) {
-        flap.style.transform = "rotateX(180deg)";
-        card.classList.add("open");
-        opened = true;
-    }
-});
-
-card.addEventListener("click", function() {
-    if (opened) {
-        card.classList.toggle("flip");
-    }
-});
-</script>
 
 </body>
 </html>
